@@ -8,7 +8,8 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  Button
+  NavLink,
+  Button,
 } from 'reactstrap';
 import { signInUser, signOutUser } from '../helpers/auth';
 
@@ -20,10 +21,14 @@ const NavBar = ({ user }) => {
   const authenticated = () => (
     <>
       <NavItem>
-        <Link className="nav-link" to="/add-drivers/">Add Driver</Link>
+        <Link className="nav-link" to="/add-drivers/">
+          Add Driver
+        </Link>
       </NavItem>
       <NavItem>
-        <Link className="nav-link" to="/drivers">Drivers</Link>
+        <Link className="nav-link" to="/drivers">
+          Drivers
+        </Link>
       </NavItem>
     </>
   );
@@ -31,30 +36,42 @@ const NavBar = ({ user }) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">musicPage</NavbarBrand>
+        <NavbarBrand href="/">Lo.&#8217;Git.</NavbarBrand>
         <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            { user && authenticated()}
-            {
-              user !== null
-              && <NavItem>
-                {
-                  user
-                    ? <Button color='danger' onClick={signOutUser}>Sign Out</Button>
-                    : <Button color='info' onClick={signInUser}>Sign In</Button>
-                }
+        <Nav className="mr-auto" navbar>
+          <NavItem>
+            <NavLink href='/'>Concentrate</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href='/releases'>Escapees</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href='/gift'>Grease</NavLink>
+          </NavItem>
+          <Collapse isOpen={isOpen} navbar>
+            {user && authenticated()}
+            {user !== null && (
+              <NavItem>
+                {user ? (
+                  <Button color="danger" onClick={signOutUser}>
+                    Sign Out
+                  </Button>
+                ) : (
+                  <Button color="info" onClick={signInUser}>
+                    Sign In
+                  </Button>
+                )}
               </NavItem>
-            }
-          </Nav>
-        </Collapse>
+            )}
+          </Collapse>
+        </Nav>
       </Navbar>
     </div>
   );
 };
 
 NavBar.propTypes = {
-  user: PropTypes.any
+  user: PropTypes.any,
 };
 
 export default NavBar;

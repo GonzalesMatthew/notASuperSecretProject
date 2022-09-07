@@ -4,6 +4,8 @@ import {
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Home from '../views/Home';
+import Releases from '../views/Releases';
+import Donate from '../views/Donate';
 import NotFound from '../views/NotFound';
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => {
@@ -25,6 +27,16 @@ export default function Routes({ user }) {
         <Route
           exact path='/'
           component={Home}
+          user={user}
+        />
+        <Route
+          exact path='/releases'
+          component={Releases}
+          user={user}
+        />
+        <Route
+          exact path='/gift'
+          component={Donate}
           user={user}
         />
         {/* <PrivateRoute
