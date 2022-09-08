@@ -8,7 +8,7 @@ function Home() {
       <iframe
         frameBorder="0"
         width="500"
-        height="60"
+        height="250"
         src="https://drive.google.com/file/d/1oOj5RIgQh1jT_D25Cvjnm_F8r55lTeSP/preview">
       </iframe>
     </div>
