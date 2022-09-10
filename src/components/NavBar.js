@@ -9,9 +9,9 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Button,
+  // Button,
 } from 'reactstrap';
-import { signInUser, signOutUser } from '../helpers/auth';
+// import { signInUser, signOutUser } from '../helpers/auth';
 
 const NavBar = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,21 +36,21 @@ const NavBar = ({ user }) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">logit</NavbarBrand>
+        <NavbarBrand href="/">LoGit</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink href='/'>Concentrate</NavLink>
+            <NavLink href='/'>Music</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href='/releases'>Escapees</NavLink>
+            <NavLink href='/releases'>Releases</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href='/gift'>Grease</NavLink>
+            <NavLink href='/contact'>Contact</NavLink>
           </NavItem>
           <Collapse isOpen={isOpen} navbar>
             {user && authenticated()}
-            {user !== null && (
+            {/* {user !== null && (
               <NavItem>
                 {user ? (
                   <Button color="danger" onClick={signOutUser}>
@@ -62,7 +62,7 @@ const NavBar = ({ user }) => {
                   </Button>
                 )}
               </NavItem>
-            )}
+            )} */}
           </Collapse>
         </Nav>
       </Navbar>
