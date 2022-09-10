@@ -35,7 +35,7 @@ export default function Routes({ user }) {
           user={user}
         />
         <Route
-          exact path='/gift'
+          exact path='/contact'
           component={Donate}
           user={user}
         />

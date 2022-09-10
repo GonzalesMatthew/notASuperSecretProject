@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Donate() {
   return (
     <div>
-      This is donate page
+      This is contact page
     </div>
   );
 }
