@@ -1,8 +1,18 @@
 {
   "parser": "@babel/eslint-parser",
+  "settings": {
+    "react": {
+        "version": "detect"
+    }
+  },
+  "env": {
+      "browser": true,
+      "es2021": true
+  },
   "parserOptions": {
     "ecmaVersion": 9,
     "sourceType": "module",
+    "requireConfigFile": false,
     "ecmaFeatures": {
       "jsx": true,
       "modules": true,
@@ -11,7 +21,10 @@
   },
   "extends": [
     "airbnb-base",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:testing-library/react",
+    "plugin:jest/all"
   ],
   "globals": {
     "document": true,
