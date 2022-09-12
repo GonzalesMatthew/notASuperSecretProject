@@ -23,8 +23,7 @@
     "airbnb-base",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
-    "plugin:testing-library/react",
-    "plugin:jest/all"
+    "plugin:testing-library/react"
   ],
   "globals": {
     "document": true,
