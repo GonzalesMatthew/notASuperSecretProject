@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
 
-function Donate() {
+function Contact() {
   return (
     <div>
-      This is contact page
+      Contact:<br/>
+      logit@logitmusic.com
     </div>
   );
 }
 
-Donate.propTypes = {
+Contact.propTypes = {
   admin: PropTypes.any,
   user: PropTypes.any,
   aboutMe: PropTypes.array,
   setAboutMe: PropTypes.func,
 };
 
-export default Donate;
+export default Contact;
