@@ -4,7 +4,7 @@ import {
 import PropTypes from 'prop-types';
 import Home from '../views/Home';
 import Releases from '../views/Releases';
-import Donate from '../views/Donate';
+import Contact from '../views/Contact';
 import NotFound from '../views/NotFound';
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => {
@@ -35,7 +35,7 @@ export default function Routes({ user }) {
         />
         <Route
           exact path='/contact'
-          component={Donate}
+          component={Contact}
           user={user}
         />
         {/* <PrivateRoute
