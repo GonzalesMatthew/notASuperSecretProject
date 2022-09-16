@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+import React from 'react';
+// import PropTypes from 'prop-types';
 
 function Home() {
   return (
@@ -26,11 +27,7 @@ function Home() {
   );
 }
 
-Home.propTypes = {
-  admin: PropTypes.any,
-  user: PropTypes.any,
-  aboutMe: PropTypes.array,
-  setAboutMe: PropTypes.func,
-};
+// Home.propTypes = {
+// };
 
 export default Home;
