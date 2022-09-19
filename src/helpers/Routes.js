@@ -3,10 +3,10 @@ import {
   BrowserRouter, Route, Switch, Redirect
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Home from '../views/Home';
-import Releases from '../views/Releases';
-import Contact from '../views/Contact';
-import NotFound from '../views/NotFound';
+import Home from '../views/Home.tsx';
+import Releases from '../views/Releases.tsx';
+import Contact from '../views/Contact.tsx';
+import NotFound from '../views/NotFound.tsx';
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => {
   const routeChecker = (taco) => (user

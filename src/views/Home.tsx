@@ -14,7 +14,7 @@ function Home() {
           src="https://drive.google.com/file/d/19OhxEnh2d_PQhE_3uUB36Fq9YMR9uYNM/preview"
         ></iframe>
       </div>
-      <div>
+      {/* <div>
         Sailing Tepid Waters - Demo<br/>
         <iframe
           frameBorder="0"
@@ -22,7 +22,7 @@ function Home() {
           height="250"
           src="https://drive.google.com/file/d/1oOj5RIgQh1jT_D25Cvjnm_F8r55lTeSP/preview"
         ></iframe>
-      </div>
+      </div> */}
     </div>
   );
 }
