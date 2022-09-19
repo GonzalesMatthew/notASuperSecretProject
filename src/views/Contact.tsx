@@ -1,18 +1,20 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
-function Releases() {
+function Contact() {
   return (
     <div>
-      This is release page
+      Contact:<br/>
+      logit@logitmusic.com
     </div>
   );
 }
 
-Releases.propTypes = {
+Contact.propTypes = {
   admin: PropTypes.any,
   user: PropTypes.any,
   aboutMe: PropTypes.array,
   setAboutMe: PropTypes.func,
 };
 
-export default Releases;
+export default Contact;

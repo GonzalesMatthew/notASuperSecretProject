@@ -1,19 +1,19 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
-function Contact() {
+function NotFound() {
   return (
     <div>
-      Contact:<br/>
-      logit@logitmusic.com
+      This is a blank page ...
     </div>
   );
 }
 
-Contact.propTypes = {
+NotFound.propTypes = {
   admin: PropTypes.any,
   user: PropTypes.any,
   aboutMe: PropTypes.array,
   setAboutMe: PropTypes.func,
 };
 
-export default Contact;
+export default NotFound;

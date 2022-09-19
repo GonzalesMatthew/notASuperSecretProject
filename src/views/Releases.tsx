@@ -1,18 +1,19 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
-function NotFound() {
+function Releases() {
   return (
     <div>
-      This is a blank page ...
+      This is release page
     </div>
   );
 }
 
-NotFound.propTypes = {
+Releases.propTypes = {
   admin: PropTypes.any,
   user: PropTypes.any,
   aboutMe: PropTypes.array,
   setAboutMe: PropTypes.func,
 };
 
-export default NotFound;
+export default Releases;
