@@ -9,7 +9,7 @@ import './App.scss';
 // firebase.initializeApp(firebaseConfig);
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<any | null>(null);
 
   useEffect(() => {
     setUser(false);
