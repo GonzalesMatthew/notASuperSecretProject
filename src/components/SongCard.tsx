@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SongCard = ({ title, path }) => {
+const SongCard = ({ title, path }) => (
   <>
     <div>
       {title}<br/>
@@ -13,7 +13,7 @@ const SongCard = ({ title, path }) => {
       ></iframe>
     </div>
   </>
-};
+);
 
 SongCard.propTypes = {
   title: PropTypes.string,

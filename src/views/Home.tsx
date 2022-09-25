@@ -1,7 +1,7 @@
 import React from 'react';
 import SongCard from '../components/SongCard';
 
-function Home() {
+const Home = () => (
   <>
     <div>
       <SongCard
@@ -14,6 +14,6 @@ function Home() {
       />
     </div>
   </>
-}
+);
 
 export default Home;
