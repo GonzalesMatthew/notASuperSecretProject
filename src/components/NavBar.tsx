@@ -36,7 +36,7 @@ const NavBar = ({ user }) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Lo-Git</NavbarBrand>
+        <NavbarBrand href="/">LoGit</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Nav className="mr-auto" navbar>
           <NavItem>
