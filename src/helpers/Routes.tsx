@@ -3,7 +3,7 @@ import {
   BrowserRouter, Route, Switch, Redirect
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Home from '../views/Home';
+import Music from '../views/Music';
 import Releases from '../views/Releases';
 import Contact from '../views/Contact';
 import NotFound from '../views/NotFound';
@@ -26,7 +26,7 @@ export default function Routes({ user }) {
       <Switch>
         <Route
           exact path='/'
-          component={Home}
+          component={Music}
           user={user}
         />
         <Route
