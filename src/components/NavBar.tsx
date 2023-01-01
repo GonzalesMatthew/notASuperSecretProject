@@ -18,6 +18,7 @@ const NavBar = ({ user }) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  // this authenticated bit only works when auth verified
   const authenticated = () => (
     <>
       <NavItem>

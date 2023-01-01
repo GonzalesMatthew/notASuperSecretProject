@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SongCard from '../components/SongCard';
 
-const Music = () => (
+const Music = (musicStatus, setMusicStatus) => (
   <>
     <div>
       <SongCard
@@ -15,5 +16,10 @@ const Music = () => (
     </div>
   </>
 );
+
+Music.propTypes = {
+  musicStatus: PropTypes.bool,
+  setMusicStatus: PropTypes.any
+};
 
 export default Music;
