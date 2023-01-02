@@ -3,10 +3,11 @@ import {
   BrowserRouter, Route, Switch, Redirect
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Music from '../views/Music';
-import Releases from '../views/Releases';
-import Contact from '../views/Contact';
+// import Music from '../components/Music';
+import Releases from '../components/Releases';
+import Contact from '../components/Contact';
 import NotFound from '../views/NotFound';
+import Home from '../views/Home';
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => {
   const routeChecker = (taco) => (user
@@ -26,7 +27,7 @@ export default function Routes({ user }) {
       <Switch>
         <Route
           exact path='/'
-          component={Music}
+          component={Home}
           user={user}
         />
         <Route
