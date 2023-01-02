@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import {
-  Collapse,
+  // Collapse,
   Navbar,
-  NavbarToggler,
+  // NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
@@ -14,31 +14,32 @@ import {
 // import { signInUser, signOutUser } from '../helpers/auth';
 
 const NavBar = ({ user }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  console.warn('delete me later', user);
 
-  const toggle = () => setIsOpen(!isOpen);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const toggle = () => setIsOpen(!isOpen);
 
   // this authenticated bit only works when auth verified
-  const authenticated = () => (
-    <>
-      <NavItem>
-        <Link className="nav-link" to="/add-drivers/">
-          Add Driver
-        </Link>
-      </NavItem>
-      <NavItem>
-        <Link className="nav-link" to="/drivers">
-          Drivers
-        </Link>
-      </NavItem>
-    </>
-  );
+  // const authenticated = () => (
+  //   <>
+  //     <NavItem>
+  //       <Link className="nav-link" to="/add-drivers/">
+  //         Add Driver
+  //       </Link>
+  //     </NavItem>
+  //     <NavItem>
+  //       <Link className="nav-link" to="/drivers">
+  //         Drivers
+  //       </Link>
+  //     </NavItem>
+  //   </>
+  // );
 
   return (
     <div>
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">LoGit</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
+        {/* <NavbarToggler onClick={toggle} /> */}
         <Nav className="mr-auto" navbar>
           <NavItem>
             <NavLink href='/'>Music</NavLink>
@@ -49,9 +50,9 @@ const NavBar = ({ user }) => {
           <NavItem>
             <NavLink href='/contact'>Contact</NavLink>
           </NavItem>
-          <Collapse isOpen={isOpen} navbar>
+          {/* <Collapse isOpen={isOpen} navbar>
             {user && authenticated()}
-            {/* {user !== null && (
+            {user !== null && (
               <NavItem>
                 {user ? (
                   <Button color="danger" onClick={signOutUser}>
@@ -63,8 +64,8 @@ const NavBar = ({ user }) => {
                   </Button>
                 )}
               </NavItem>
-            )} */}
-          </Collapse>
+            )}
+          </Collapse> */}
         </Nav>
       </Navbar>
     </div>

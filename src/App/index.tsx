@@ -3,10 +3,10 @@ import 'firebase/auth';
 import React, { useState, useEffect } from 'react';
 import NavBar from '../components/NavBar';
 // import firebaseConfig from '../helpers/apiKeys';
-// import Routes from '../helpers/Routes';
-import Contact from '../views/Contact';
-import Music from '../views/Music';
-import Releases from '../views/Releases';
+import Routes from '../helpers/Routes';
+// import Contact from '../views/Contact';
+// import Music from '../views/Music';
+// import Releases from '../views/Releases';
 import './App.scss';
 
 // firebase.initializeApp(firebaseConfig);
@@ -38,10 +38,10 @@ function App() {
   return (
     <>
       <NavBar user />
-      <Music/>
+      {/* <Music/>
       <Releases/>
-      <Contact/>
-      {/* <Routes user={user} /> */}
+      <Contact/> */}
+      <Routes user={user} />
     </>
   );
 }
