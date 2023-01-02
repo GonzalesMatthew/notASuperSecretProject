@@ -12,8 +12,8 @@ import './App.scss';
 // firebase.initializeApp(firebaseConfig);
 
 function App() {
-  const [user, setUser] = useState<any | null>(null);
-  const [musicStatus, setMusicStatus] = useState<boolean | true>(true);
+  const [user, setUser] = useState<any | null>(false);
+  // const [musicToggle, setMusicToggle] = useState<boolean | true>(true);
   // const [releasesStatus, setReleasesStatus] = useState<boolean | true>(false);
   // const [contactStatus, setContactStatus] = useState<boolean | true>(false);
 
@@ -34,11 +34,11 @@ function App() {
     //   }
     // });
   }, []);
-
+  console.warn(user);
   return (
     <>
       <NavBar user />
-      <Music musicStatus setMusicStatus/>
+      <Music/>
       <Releases/>
       <Contact/>
       {/* <Routes user={user} /> */}
