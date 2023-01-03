@@ -13,8 +13,8 @@ import {
 } from 'reactstrap';
 // import { signInUser, signOutUser } from '../helpers/auth';
 
-const NavBar = ({ user }) => {
-  console.warn('delete me later', user);
+const NavBar = ({ user, setToggle }) => {
+  console.warn('delete me from NavBar', user, setToggle);
 
   // const [isOpen, setIsOpen] = useState(false);
   // const toggle = () => setIsOpen(!isOpen);
@@ -42,13 +42,25 @@ const NavBar = ({ user }) => {
         {/* <NavbarToggler onClick={toggle} /> */}
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink href='/'>Music</NavLink>
+            <NavLink>
+              <button id="musicButton" onClick={setToggle('Music')}>
+                Music
+              </button>
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href='/releases'>Releases</NavLink>
+            <NavLink>
+              <button id="releasesButton" onClick={setToggle('Releases')}>
+                Releases
+              </button>
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href='/contact'>Contact</NavLink>
+            <NavLink>
+              <button id="contactButton" onClick={setToggle('Contact')}>
+                Contact
+              </button>
+            </NavLink>
           </NavItem>
           {/* <Collapse isOpen={isOpen} navbar>
             {user && authenticated()}
@@ -74,6 +86,7 @@ const NavBar = ({ user }) => {
 
 NavBar.propTypes = {
   user: PropTypes.any,
+  setToggle: PropTypes.any,
 };
 
 export default NavBar;

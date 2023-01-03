@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Contact() {
+function Contact(toggle) {
+  console.warn('Contact', toggle);
   return (
     <div>
       Contact:<br/>
@@ -15,6 +16,7 @@ Contact.propTypes = {
   user: PropTypes.any,
   aboutMe: PropTypes.array,
   setAboutMe: PropTypes.func,
+  toggle: PropTypes.string
 };
 
 export default Contact;

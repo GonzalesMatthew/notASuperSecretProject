@@ -4,18 +4,13 @@ import React, { useState, useEffect } from 'react';
 import NavBar from '../components/NavBar';
 // import firebaseConfig from '../helpers/apiKeys';
 import Routes from '../helpers/Routes';
-// import Contact from '../views/Contact';
-// import Music from '../views/Music';
-// import Releases from '../views/Releases';
 import './App.scss';
 
 // firebase.initializeApp(firebaseConfig);
 
 function App() {
   const [user, setUser] = useState<any | null>(false);
-  // const [musicToggle, setMusicToggle] = useState<boolean | true>(true);
-  // const [releasesStatus, setReleasesStatus] = useState<boolean | true>(false);
-  // const [contactStatus, setContactStatus] = useState<boolean | true>(false);
+  const [toggle, setToggle] = useState<string>('Music');
 
   useEffect(() => {
     setUser(false);
@@ -34,14 +29,12 @@ function App() {
     //   }
     // });
   }, []);
-  console.warn(user);
+  console.warn('Index', user);
+  console.warn('Index toggle value: ', toggle);
   return (
     <>
-      <NavBar user />
-      {/* <Music/>
-      <Releases/>
-      <Contact/> */}
-      <Routes user={user} />
+      <NavBar user={user} setToggle={setToggle}/>
+      <Routes user={user} toggle={toggle}/>
     </>
   );
 }
