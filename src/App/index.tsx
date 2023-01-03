@@ -4,12 +4,18 @@ import React, { useState, useEffect } from 'react';
 import NavBar from '../components/NavBar';
 // import firebaseConfig from '../helpers/apiKeys';
 import Routes from '../helpers/Routes';
+// import Contact from '../views/Contact';
+// import Music from '../views/Music';
+// import Releases from '../views/Releases';
 import './App.scss';
 
 // firebase.initializeApp(firebaseConfig);
 
 function App() {
-  const [user, setUser] = useState<any | null>(null);
+  const [user, setUser] = useState<any | null>(false);
+  // const [musicToggle, setMusicToggle] = useState<boolean | true>(true);
+  // const [releasesStatus, setReleasesStatus] = useState<boolean | true>(false);
+  // const [contactStatus, setContactStatus] = useState<boolean | true>(false);
 
   useEffect(() => {
     setUser(false);
@@ -28,10 +34,13 @@ function App() {
     //   }
     // });
   }, []);
-
+  console.warn(user);
   return (
     <>
-      <NavBar user={user} />
+      <NavBar user />
+      {/* <Music/>
+      <Releases/>
+      <Contact/> */}
       <Routes user={user} />
     </>
   );
