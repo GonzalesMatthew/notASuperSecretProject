@@ -1,13 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { InferProps } from 'prop-types';
 import SongCard from './SongCard';
 
-const Music = (toggle) => {
-  console.warn('Music component', toggle);
+const Music = ({ toggle }: InferProps<typeof Music.propTypes>) => {
+  console.warn('Music component mounted');
   return (
     <>
-      {toggle === 'Music'
-        && <div>
+      {toggle === 'Music' && (
+        <div>
           <SongCard
             title="Whatever - Demo"
             path="https://drive.google.com/file/d/19OhxEnh2d_PQhE_3uUB36Fq9YMR9uYNM/preview"
@@ -17,7 +17,7 @@ const Music = (toggle) => {
             path="https://drive.google.com/file/d/1oOj5RIgQh1jT_D25Cvjnm_F8r55lTeSP/preview"
           />
         </div>
-      }
+      )}
     </>
   );
 };

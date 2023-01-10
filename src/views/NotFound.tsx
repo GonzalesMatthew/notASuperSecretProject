@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 function NotFound() {
   return (
@@ -8,12 +7,5 @@ function NotFound() {
     </div>
   );
 }
-
-NotFound.propTypes = {
-  admin: PropTypes.any,
-  user: PropTypes.any,
-  aboutMe: PropTypes.array,
-  setAboutMe: PropTypes.func,
-};
 
 export default NotFound;
