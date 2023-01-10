@@ -1,68 +1,29 @@
 import React from 'react';
 import {
-  BrowserRouter, Route, Switch, Redirect
+  BrowserRouter, Route, Switch
 } from 'react-router-dom';
-import PropTypes from 'prop-types';
-// import Music from '../components/Music';
-import Releases from '../components/Releases';
-import Contact from '../components/Contact';
-import NotFound from '../views/NotFound';
+import PropTypes, { InferProps } from 'prop-types';
 import Home from '../views/Home';
+import NotFound from '../views/NotFound';
 
-const PrivateRoute = ({ component: Component, user, ...rest }) => {
-  const routeChecker = (taco) => (user
-    ? (<Component {...taco} user={user} />)
-    : (<Redirect to={{ pathname: '/', state: { from: taco.location } }} />));
-  return <Route {...rest} render={(props) => routeChecker(props)} />;
-};
-
-PrivateRoute.propTypes = {
-  component: PropTypes.func,
-  user: PropTypes.any
-};
-
-export default function Routes({ user }) {
+export default function Routes({ toggle }: InferProps<typeof Routes.propTypes>) {
   return (
     <BrowserRouter>
       <Switch>
         <Route
-          exact path='/'
-          component={Home}
-          user={user}
-        />
-        <Route
-          exact path='/releases'
-          component={Releases}
-          user={user}
-        />
-        <Route
-          exact path='/contact'
-          component={Contact}
-          user={user}
-        />
-        {/* <PrivateRoute
           exact
-          path='/drivers'
-          user={user}
-          component={() => <Racers racers={racers}
-          setRacers={setRacers} user={user}/>}
+          path="/"
+          component={() => <Home
+            toggle={toggle}
+            />
+          }
         />
-        <PrivateRoute
-          path='/drivers/:firebaseKey'
-          user={user}
-          component={SingleRacer}
-        />
-        <PrivateRoute
-          path='/add-drivers'
-          user={user}
-          component={() => <AddRacer setRacers={setRacers} user={user}/>}
-        /> */}
-        <Route path='*' component = {NotFound} />
+        <Route path="*" component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
 }
 
 Routes.propTypes = {
-  user: PropTypes.any
+  toggle: PropTypes.string,
 };

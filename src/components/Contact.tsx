@@ -1,20 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { InferProps } from 'prop-types';
 
-function Contact() {
+const Contact = ({ toggle }: InferProps<typeof Contact.propTypes>) => {
+  console.warn('Contact component mounted');
   return (
-    <div>
-      Contact:<br/>
-      logit@logitmusic.com
-    </div>
+    <>
+      {toggle === 'Contact' && (
+        <div>
+          Contact:
+          <br />
+          logit@logitmusic.com
+        </div>
+      )}
+    </>
   );
-}
+};
 
 Contact.propTypes = {
-  admin: PropTypes.any,
-  user: PropTypes.any,
-  aboutMe: PropTypes.array,
-  setAboutMe: PropTypes.func,
+  toggle: PropTypes.string,
 };
 
 export default Contact;

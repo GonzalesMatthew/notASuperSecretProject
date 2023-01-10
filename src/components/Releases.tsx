@@ -1,19 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { InferProps } from 'prop-types';
 
-function Releases() {
+const Releases = ({ toggle }: InferProps<typeof Releases.propTypes>) => {
+  console.warn('Releases component mounted');
   return (
-    <div>
-      This is release page
-    </div>
+    <>
+      {toggle === 'Releases' && (
+        <div>This is release page</div>
+      )}
+    </>
   );
-}
+};
 
 Releases.propTypes = {
-  admin: PropTypes.any,
-  user: PropTypes.any,
-  aboutMe: PropTypes.array,
-  setAboutMe: PropTypes.func,
+  toggle: PropTypes.string,
 };
 
 export default Releases;

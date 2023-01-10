@@ -38,6 +38,8 @@
     "allowTemplateLiterals": true
   },
   "rules": {
+    //"@typescript-eslint/no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "no-console": [1, { "allow": ["error", "warn"] }],
     "comma-dangle": ["error", "only-multiline"],
     "no-debugger": 1,
