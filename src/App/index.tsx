@@ -1,5 +1,6 @@
 import 'firebase/auth';
 import React, { useState } from 'react';
+import Music from '../components/Music';
 import NavBar from '../components/NavBar';
 import Routes from '../helpers/Routes';
 import './App.scss';
@@ -10,6 +11,9 @@ function App() {
   return (
     <>
       <NavBar setToggle={setToggle}/>
+      <div id='musicDiv'>
+        <Music/>
+      </div>
       <Routes toggle={toggle}/>
     </>
   );
