@@ -1,29 +1,50 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import Music from '../components/Music';
 import Releases from '../components/Releases';
 import Contact from '../components/Contact';
 
 const Home = ({ toggle }: InferProps<typeof Home.propTypes>) => {
-  const myDiv = document.getElementById('myTest') as HTMLElement;
-  function hide() {
-    myDiv.style.display = 'none';
-    console.warn('Now hiding the element');
-  }
-  function show() {
-    myDiv.style.display = 'block';
-    console.warn('Now showing the element');
-  }
   console.warn('Home component mounted');
+
+  useEffect(() => {
+    const musicDiv = document.getElementById('musicComp') as HTMLElement;
+    const releasesDiv = document.getElementById('releasesComp') as HTMLElement;
+    const contactDiv = document.getElementById('contactComp') as HTMLElement;
+    switch (toggle) {
+      case 'Music':
+        musicDiv.style.display = 'block';
+        releasesDiv.style.display = 'none';
+        contactDiv.style.display = 'none';
+        break;
+      case 'Releases':
+        musicDiv.style.display = 'none';
+        releasesDiv.style.display = 'block';
+        contactDiv.style.display = 'none';
+        break;
+      case 'Contact':
+        musicDiv.style.display = 'none';
+        releasesDiv.style.display = 'none';
+        contactDiv.style.display = 'block';
+        break;
+      default:
+        console.warn('switch code error');
+    }
+  }, [toggle]);
+
   return (
     <>
-      <div id="myTest" >
-        <Music toggle={toggle} />
+      <div id="musicComp">
+        <Music/>
       </div>
-      <Releases toggle={toggle} />
-      <Contact toggle={toggle} />
-      <button type="button" onClick={() => hide()}> Hide Element </button>
-      <button type="button" onClick={() => show()}> Show Element </button>
+      <div id="releasesComp">
+        <Releases/>
+      </div>
+      <div id="contactComp">
+        <Contact/>
+      </div>
+      {/* <button type='button' onClick={() => hide()}> Hide Element </button>
+        <button type='button' onClick={() => show()}> Show Element </button> */}
     </>
   );
 };
