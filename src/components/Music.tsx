@@ -8,7 +8,7 @@ const Music = () => {
       <div>
         <SongCard
           title="Agave Dance"
-          path="https://drive.google.com/drive/u/2/folders/1WEegFddMpJdFS1absUUw6wOWxy4duzlu"
+          path="https://drive.google.com/file/d/1GqXuQY7Od83htuChCNPhZWJPNV0Wk78p/preview"
         />
         <SongCard
           title="Whatever - Demo"
