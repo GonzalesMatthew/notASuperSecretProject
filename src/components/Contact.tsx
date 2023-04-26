@@ -8,6 +8,8 @@ const Contact = () => {
         Contact:
         <br />
         logit@logitmusic.com
+        <br />
+        https://twitter.com/LogitMusic
       </div>
     </>
   );
